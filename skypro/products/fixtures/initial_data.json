@@ -1,0 +1,22 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "name": "Товар 1",
+            "category": "Категория A",
+            "is_active": true,
+            "price": "10.99"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "name": "Товар 2",
+            "category": "Категория B",
+            "is_active": false,
+            "price": "20.00"
+        }
+    }
+]

@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./staticfiles:/app/static
+      - ./db.sqlite3:/app/db.sqlite3
+    command: python manage.py runserver 0.0.0.0:8000
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: django_product_table
+      POSTGRES_USER: django
+      POSTGRES_PASSWORD: django
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+volumes:
+  postgres_data:

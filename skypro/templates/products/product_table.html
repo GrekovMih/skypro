@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Таблица товаров{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Таблица товаров</h2>
+  <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+          <tr>
+              <th>ID</th>
+              <th>Название товара</th>
+              <th>Категория</th>
+              <th>Статус активности</th>
+              <th>Цена</th>
+              <th>Заказы за прошлый месяц</th>
+              <th>Заказы за текущий месяц</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for product in products %}
+          <tr>
+              <td>{{ product.id }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.is_active|yesno:"Активен,Неактивен" }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.orders_previous_month }}</td>
+              <td>{{ product.orders_current_month }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+{% endblock %}
