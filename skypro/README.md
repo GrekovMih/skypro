@@ -26,8 +26,9 @@
    pip install -r requirements.txt
    ```
 
-3. **Применить миграции:**
+3. **Создать и применить миграции:**
    ```bash
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
